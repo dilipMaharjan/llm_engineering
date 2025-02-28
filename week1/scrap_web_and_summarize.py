@@ -39,7 +39,7 @@ class Website:
             irrelevant.decompose()
         self.text=soup.body.get_text(separator='\n',strip=True)
 
-scrapped_website=Website("https://dilipmaharjan.com")
+scrapped_website=Website("https://dilipmaharjan.com/")
 # print(scrapped_website.title)
 # print(scrapped_website.text)
 
@@ -78,9 +78,9 @@ def summarize(url):
         messages=messages_for(website),
         )
     return response.choices[0].message.content
-print(summarize("https://dilipmaharjan.com"))
+print(summarize("https://dilipmaharjan.com/"))
 def display_summary(url):
     summary=summarize(url)
     display(Markdown(summary))
     
-display_summary("https://dilipmaharjan.com")
+display_summary("https://dilipmaharjan.com/")
